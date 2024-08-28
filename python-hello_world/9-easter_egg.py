@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 zen_of_python = """
 Beautiful is better than ugly.
 Explicit is better than implicit.
