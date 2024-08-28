@@ -6,4 +6,3 @@ def lowercase():
 
 
 lowercase()
-print()
