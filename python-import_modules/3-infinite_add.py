@@ -10,4 +10,4 @@ if __name__ == "__main__":
     import sys
     arguments = list(map(int, sys.argv[1:]))
     result = add_arguments(*arguments)
-    print("The result of the addition is:", result)
+    print(result)
