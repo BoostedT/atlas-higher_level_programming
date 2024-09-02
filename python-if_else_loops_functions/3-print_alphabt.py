@@ -1,9 +1,5 @@
-#!/usr/bin/python3
-def alphabet():
-    for letters in range(ord('a'), ord('z') + 1):
-        if chr(letters) == 'e' or chr(letters) == 'q':
-            continue
-        print("{:c}".format(letters), end=" ")
+#!usr/bin/python3
 
-
-alphabet()
+for letter in range(97, 123):
+    if letter != 101 and letter != 113:
+        print("{}".format(chr(letter)), end="")
