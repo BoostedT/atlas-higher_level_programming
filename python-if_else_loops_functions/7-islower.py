@@ -4,4 +4,3 @@ def islower(c):
         return True
     else:
         return False
-print("a is {}".format("lower" if islower("a") else "upper"))
