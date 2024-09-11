@@ -5,15 +5,26 @@ these characters {'.', '?', ':'}."""
 
 
 def text_indentation(text):
-    """Prints text with added two newlines
-    after each of these characters {'.', '?', ':'}.
+    """Prints text with two newlines after '.', '?', and ':'."""
+    
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+    """
+     prints a text with 2 new lines after each
+     of these characters: ., ? and :
     """
 
-    if type(text) is not str:
-        raise TypeError("text must be a string")
+    formatted_text = ""
 
-    for delim in ".:?":
-        text = (delim + "\n\n").join(
-            [line.strip(" ") for line in text.split(delim)])
+    i = 0
+    while i < len(text):
+        formatted_text += text[i]
+        if text[i] in ".:?":
+            formatted_text += "\n\n"
+            i += 1
 
-    print("{}".format(text), end="")
+        while i < len(text) and text[i] == ' ':
+                i += 1
+        continue
+        i += 1
+    print(formatted_text, end="")
