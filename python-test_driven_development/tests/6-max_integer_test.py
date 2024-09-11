@@ -26,3 +26,13 @@ class TestMaxInteger(unittest.TestCase):
             self.assertRaises(TypeError, max_integer, [1, 2, "hello"])
             self.assertRaises(TypeError, max_integer, [1, [1, 2]])
             
+    def negative_test(self):
+        """Test negative numbers
+        """
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
+        self.assertEqual(max_integer([-1, -3, -4, -2]), -1)
+        self.assertEqual(max_integer([-4, -3, -2, -1]), -1)
+        self.assertEqual(max_integer([-1]), -1)
+        self.assertEqual(max_integer([-1, -1, -1, -1]), -1)
+        self.assertEqual(max_integer([-1, -2, -3, -4, -3, -2, -1]), -1)
+        self.assertEqual(max_integer([-4, -3, -2, -1, -2, -3, -4]), -1)
