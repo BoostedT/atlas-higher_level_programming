@@ -10,7 +10,7 @@ def text_indentation(text):
         text (str): parameter to be printed
     """
     special_chars = [".", ":", "?"]
-    if type(text) != str:
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
     # flag to know if the last character was a special character
     last = False
