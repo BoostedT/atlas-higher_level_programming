@@ -3,6 +3,7 @@
 module 0-add_integer
 """
 
+
 def add_integer(a, b=98):
     """
     adds two integers
@@ -17,6 +18,7 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     return int(a) + int(b)
+
 
 if __name__ == "__main__":
     import doctest
