@@ -1,30 +1,28 @@
 #!/usr/bin/python3
-"""Module that contains a function that prints
-text with two newlines after each of
-these characters {'.', '?', ':'}."""
+"""This module contain a function that prints a text with new lines"""
 
 
 def text_indentation(text):
-    """Prints text with two newlines after '.', '?', and ':'."""
-    
-    if not isinstance(text, str):
+    """text_indentation function that prints text formatted
+    depending of the character identified (".", ":", "?")
+
+    Args:
+        text (str): parameter to be printed
+    """
+    special_chars = [".", ":", "?"]
+    if type(text) != str:
         raise TypeError("text must be a string")
-    """
-     prints a text with 2 new lines after each
-     of these characters: ., ? and :
-    """
-
-    formatted_text = ""
-
-    i = 0
-    while i < len(text):
-        formatted_text += text[i]
-        if text[i] in ".:?":
-            formatted_text += "\n\n"
-            i += 1
-
-        while i < len(text) and text[i] == ' ':
-                i += 1
-        continue
-        i += 1
-    print(formatted_text, end="")
+    # flag to know if the last character was a special character
+    last = False
+    for i in text:
+        if i in special_chars:
+            print(i)
+            print()
+            last = True
+        else:
+            if last is True and i == " ":
+                last = False
+                continue
+            else:
+                print(i, end="")
+                last = False

@@ -59,7 +59,7 @@ Now test it:
     <BLANKLINE>
     Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
-    >>> text_indentation(".    : ?")
+    >>> text_indentation(". : ?")
     .
     <BLANKLINE>
     :
