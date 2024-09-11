@@ -85,5 +85,5 @@ Different row sizes:
     [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
     >>> matrix_divided()
-T   Traceback (most recent call last):
-    TypeError: matrix_divided() missing 1 required positional argument: 'first_name'
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
