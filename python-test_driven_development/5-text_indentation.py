@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Module that contains a function that prints 
-text with two newlines after each of 
+"""Module that contains a function that prints
+text with two newlines after each of
 these characters {'.', '?', ':'}."""
 
 
