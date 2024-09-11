@@ -12,8 +12,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_regular(self):
         """Test regular numbers
         """
-        result = max_integer([1, 2, 3, 4])
-        self.assertEqual(result, 4)
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
         
     def test_not_list(self):
         """Test when the argument is not a list
