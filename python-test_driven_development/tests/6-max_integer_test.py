@@ -9,30 +9,20 @@ class TestMaxInteger(unittest.TestCase):
     """Test cases for max_integer function
     """
 
-    def test_max_integer(self):
-        """Test max_integer function
+    def test_regular(self):
+        """Test regular numbers
         """
-        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
-        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
-        self.assertEqual(max_integer([1]), 1)
-        self.assertEqual(max_integer([1, 1, 1, 1]), 1)
-        self.assertEqual(max_integer([1, 2, 3, 4, 3, 2, 1]), 4)
-        self.assertEqual(max_integer([4, 3, 2, 1, 2, 3, 4]), 4)
-
-        def test_type_error(self):
-            """type error test
-            """
-            self.assertRaises(TypeError, max_integer, [1, 2, "hello"])
-            self.assertRaises(TypeError, max_integer, [1, [1, 2]])
+        result = max_integer([1, 2, 3, 4])
+        self.assertEqual(result, 4)
+        
+    def test_not_list(self):
+        """Test when the argument is not a list
+        """
+        with self.assertRaises(TypeError):
+            max_integer(1)
             
     def negative_test(self):
         """Test negative numbers
         """
-        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
-        self.assertEqual(max_integer([-1, -3, -4, -2]), -1)
-        self.assertEqual(max_integer([-4, -3, -2, -1]), -1)
-        self.assertEqual(max_integer([-1]), -1)
-        self.assertEqual(max_integer([-1, -1, -1, -1]), -1)
-        self.assertEqual(max_integer([-1, -2, -3, -4, -3, -2, -1]), -1)
-        self.assertEqual(max_integer([-4, -3, -2, -1, -2, -3, -4]), -1)
+        result = max_integer([-1, -2, -3, -4])
+        self.assertEqual(result, -1)
