@@ -1,0 +1,6 @@
+def add_integers(a, b):
+    """Returns the sum of two integers."""
+    if isinstance(a, int) and isinstance(b, int):
+        return a + b
+    else:
+        raise ValueError("Both arguments must be integers.")
