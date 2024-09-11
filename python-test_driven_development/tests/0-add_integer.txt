@@ -1,6 +1,62 @@
-def add_integers(a, b):
-    """Returns the sum of two integers."""
-    if isinstance(a, int) and isinstance(b, int):
-        return a + b
-    else:
-        raise ValueError("Both arguments must be integers.")
+how to use add
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(0)
+98
+
+>>> add_integer(-10, 10)
+0
+
+>>> add_integer(1.5, 2.5)
+3
+
+>>> add_integer("a", 1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(1, "b")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2)
+100
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(0)
+98
+
+>>> add_integer(-10, 10)
+0
+
+>>> add_integer(1.5, 2.5)
+3
+
+>>> add_integer("a", 1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(1, "b")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
