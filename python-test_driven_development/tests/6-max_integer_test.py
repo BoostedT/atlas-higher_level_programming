@@ -15,18 +15,19 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
         self.assertEqual(max_integer([4, 3, 2, 1]), 4)
-        
     def test_not_list(self):
         """Test when the argument is not a list
         """
         with self.assertRaises(TypeError):
             max_integer(1)
-            
+
     def negative_test(self):
         """Test negative numbers
         """
-        result = max_integer([-1, -2, -3, -4])
-        self.assertEqual(result, -1)
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
+        self.assertEqual(max_integer([-1, -3, -4, -2]), -1)
+        self.assertEqual(max_integer([-4, -3, -2, -1]), -1)
+
 
 if __name__ == '__main__':
     unittest.main()
