@@ -3,6 +3,10 @@
 """
 Module 1-square
 """
+
+
 class Square:
-    """ Square class """
+    """
+    Class Square that defines a square
+    """
     pass
