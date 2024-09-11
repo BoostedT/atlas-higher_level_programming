@@ -2,7 +2,7 @@
 """
 Module: 2-matrix_divided
 
-Divides all elements of a matrix by 
+Divides all elements of a matrix by
 a given number.
 """
 
@@ -16,7 +16,7 @@ def matrix_divided(matrix, div):
         div (int or float): The number to divide the matrix elements by.
     """
     if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
-        raise TypeError("matrix must be a matrix of (list of lists) integers/floats")
+        raise TypeError("matrix must be a matrix of (list of lists) integres/floats")
 
     for row in matrix:
         if len(row) == 0:
