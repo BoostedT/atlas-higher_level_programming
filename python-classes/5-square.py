@@ -4,6 +4,7 @@
 module for printing a square
 """
 
+
 class Square:
     """
     class square
@@ -12,7 +13,7 @@ class Square:
     def __init__(self, size=0):
         """
         init method
-        Args: 
+        Args:
             size (int): size of square
         """
         self.size = size
@@ -35,7 +36,7 @@ class Square:
     def area(self):
         """calculate area of square"""
         return (self.__size * self.__size)
-    
+
     def my_print(self):
         if self.__size == 0:
             print()
