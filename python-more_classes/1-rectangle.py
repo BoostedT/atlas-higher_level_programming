@@ -4,7 +4,7 @@
 class Rectangle:
     """Class Rectangle that defines a rectangle"""
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """
         Initializes the rectangle with given width and height.
         """
