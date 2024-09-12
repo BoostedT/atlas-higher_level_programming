@@ -17,7 +17,7 @@ class Square:
         size (int, optional): The side length of the square. Defaults to 0.
         """
         self.__size = size
-        self.my_print()
+        
 
     @property
     def size(self):
@@ -48,4 +48,4 @@ class Square:
         """
         This is a method that returns the area of the square
         """
-        return (self.__size * self.__size)
+        return self.__size ** 2
