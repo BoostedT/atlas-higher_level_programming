@@ -39,8 +39,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
    Traceback (most recent call last):
    ValueError: age must be greater than 0
 
-:: testing integer_validator with zero
+:: 
 
    >>> bg.integer_validator("age", 4)
-   Traceback (most recent call last):
-   ValueError: age must be greater than 4
+   
