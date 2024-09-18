@@ -7,7 +7,7 @@ import json
 
 def from_json_string(json_string):
     """
-    Function that returns an object (Python data structure) 
+    Function that returns an object (Python data structure)
     represented by a JSON string.
 
     Args:
