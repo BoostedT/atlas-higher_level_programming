@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Module that defines a rectangle"""
 
+from models.base import Base
 
-class Rectangle:
+
+class Rectangle(Base):
     """Class Rectangle that defines a rectangle"""
     number_of_instances = 0
     print_symbol = "#"
