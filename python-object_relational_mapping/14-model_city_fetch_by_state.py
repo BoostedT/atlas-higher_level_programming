@@ -9,17 +9,25 @@ from sys import argv
 
 if __name__ == "__main__":
     if len(argv) != 4:
-        exit('Use: 14-model_city_fetch_by_state.py <mysql username> '
-             '<mysql password> <database name>')
+        print("Usage: {} username password database".format(argv[0]))
+        exit(1)
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/'
-                           '{}'.format(argv[1], argv[2], argv[3]),
-                           pool_pre_ping=True)
-    session = Session(engine)
-    Base.metadata.create_all(engine)  # creates decprecated warning 1681
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
 
-    result = session.query(State.name, City.id, City.name).filter(
-        City.state_id == State.id).order_by(City.id).all()
-    for row in result:
-        print('{}: ({}) {}'.format(row[0], row[1], row[2]))
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost/{}".format(username, password, database),
+        pool_pre_ping=True
+    )
+    Base.metadata.create_all(engine)
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    for state, city in session.query(State, City).filter(
+        State.id == City.state_id
+    ).order_by(City.id).all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
+
     session.close()
