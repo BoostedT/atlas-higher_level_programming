@@ -1,17 +1,31 @@
-#!/usr/bin/node
-const Rectangle = require('./rectangle');
+class Rectangle {
+  constructor (w, h) {
+    if (w > 0 && h > 0 && Number.isInteger(w) && Number.isInteger(h)) {
+      this.width = w;
+      this.height = h;
+    }
+  }
 
-const rect = new Rectangle(4, 2);
-console.log('Original Rectangle:');
-rect.print();
+  print () {
+    if (this.width && this.height) {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.width));
+      }
+    }
+  }
 
-console.log('After rotation:');
-rect.rotate();
-rect.print();
+  rotate () {
+    if (this.width && this.height) {
+      [this.width, this.height] = [this.height, this.width];
+    }
+  }
 
-console.log('After doubling:');
-rect.double();
-rect.print();
+  double () {
+    if (this.width && this.height) {
+      this.width *= 2;
+      this.height *= 2;
+    }
+  }
+}
 
-const invalidRect = new Rectangle(0, -5);
-console.log('Invalid Rectangle:', invalidRect); // Output: {}
+module.exports = Rectangle;
