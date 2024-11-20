@@ -1,11 +1,7 @@
 #!/usr/bin/node
 
-function converter() {
-  var results = [];
-  for (var i = 0; i < arguments.length; i++) {
-    results.push(function() {
-      return arguments[i];
-    });
-  }
-  return results;
-}
+exports.converter = function (base) {
+  return function (number) {
+    return number.toString(base);
+  };
+};
