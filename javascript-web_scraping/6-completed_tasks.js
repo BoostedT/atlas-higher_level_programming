@@ -2,16 +2,24 @@
 
 const request = require('request');
 
-const apiUrl = process.argv[2];
+request(process.argv[2], function (err, _res, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    const completedTasksByUsers = {};
+    body = JSON.parse(body);
 
-if (!apiUrl) {
-  console.error('Please provide an API URL as an argument.');
-  process.exit(1);
-}
+    for (let i = 0; i < body.length; ++i) {
+      const userId = body[i].userId;
+      const completed = body[i].completed;
 
-request(apiUrl, { json: true }, (error, response, body) => {
-    if (err) {
-        console.error('Error fetching data:', err);
-        return;
+      if (completed && !completedTasksByUsers[userId]) {
+        completedTasksByUsers[userId] = 0;
+      }
+
+      if (completed) ++completedTasksByUsers[userId];
     }
+
+    console.log(completedTasksByUsers);
+  }
 });
