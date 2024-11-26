@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
-const express = require('express');
-const app = express();
+const request = require('request');
+const args = process.argv;
+const requestURL = 'https://swapi-api.hbtn.io/api/films/' + args[2];
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+request(requestURL, function (error, response, body) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(JSON.parse(body).title);
+  }
 });
